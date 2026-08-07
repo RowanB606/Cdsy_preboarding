@@ -99,7 +99,7 @@ ls
 ```
 
 - 파일 이름 변경
-```zsh
+```text
 mv README_copy.md "README(2).md"                 # 괄호를 특수문자로 인식하여 "" 사용
 ls
 ===[출력]===================================
@@ -108,7 +108,7 @@ ls
 ```
 
 - 파일 삭제
-```zsh
+```text
 rm "README(2).md"
 ls
 ===[출력]========
@@ -118,7 +118,7 @@ ls
 
 ### 2-4. GitHub 업로드(동기화)
 - Git 초기화
-```zsh
+```text
 git init
 ===[출력]===========================================================================
 | /Users/rok-dam0029/Cdsy_preboarding/.git/ 안의 기존 깃 저장소를 다시 초기화했습니다       |
@@ -126,11 +126,11 @@ git init
 ```
 
 - Git 레포지토리 목록에 신규 주소 등록 & Commit 대상 등록
-```zsh
+```text
 git remote add origin https://github.com/RowanB606/Cdsy_preboarding.git
 git add .
 
-# Git의 현재 상황 확인
+# Git 현재 상태 확인
 ===[출력]=======================================================
 | git status                                                  |
 | 현재 브랜치 main                                               |
@@ -144,103 +144,139 @@ git add .
 ===============================================================
 ```
 
-- 
+- Git Commit
 ```text
-% git commit -m "Commit #01 - New"
-[main e96f5ba] Commit #01 - New
- Committer: 백록담 <rok-dam0029@c4r1s6.codyssey.kr>
-이름과 전자메일 주소를 사용자 이름과 호스트 이름을 이용해서 자동으로
-설정했습니다. 이 정보가 맞는지 확인하십시오. 이 메시지를 보지 않으려면 정보를
-명시적으로 설정하십시오. 다음 명령어를 실행하고 편집기의 안내에 따라 설정
-파일을 편집하십시오:
+git commit -m "Commit #01 - New"
+===[출력]====================================================================
+| [main e96f5ba] Commit #01 - New                                          |
+|  Committer: 백록담 <rok-dam0029@c4r1s6.codyssey.kr>                        |
+| 이름과 전자메일 주소를 사용자 이름과 호스트 이름을 이용해서 자동으로                      |
+| 설정했습니다. 이 정보가 맞는지 확인하십시오. 이 메시지를 보지 않으려면 정보를               |
+| 명시적으로 설정하십시오. 다음 명령어를 실행하고 편집기의 안내에 따라 설정                  |
+| 파일을 편집하십시오:                                                          |
+|                                                                          |
+|     git config --global --edit                                           |
+|                                                                          |
+| 이렇게 한 다음, 이 커밋에 사용한 신원 정보를 다음과 같이 해서 바꿀 수 있습니다:            |
+|                                                                          |
+|     git commit --amend --reset-author                                    |
+|                                                                          |
+|  3 files changed, 96 insertions(+), 1 deletion(-)                        |
+|  create mode 100644 .DS_Store                                            |
+|  create mode 100644 week01/test.txt                                      |
+============================================================================
 
-    git config --global --edit
+# Git 현재 상태 확인
+git status
+===[출력]====================================================================
+| 현재 브랜치 main                                                            |
+| 브랜치가 'origin/main'보다 1개 커밋만큼 앞에 있습니다.                             |
+|   (로컬에 있는 커밋을 제출하려면 "git push"를 사용하십시오)                          |
+|                                                                          |
+| 커밋할 사항 없음, 작업 폴더 깨끗함                                               |
+============================================================================
+```
 
-이렇게 한 다음, 이 커밋에 사용한 신원 정보를 다음과 같이 해서 바꿀 수 있습니다:
+- Branch 이름 "main"으로 강제 변경
+```text
+git branch -M main
+```
 
-    git commit --amend --reset-author
+- GitHub origin 주소의 main branch에 업로드(push) 
+```text
+git push -u origin main
+===[출력]====================================================================
+| 오브젝트 나열하는 중: 9, 완료.                                                 |
+| 오브젝트 개수 세는 중: 100% (9/9), 완료.                                       |
+| Delta compression using up to 6 threads                                  |
+| 오브젝트 압축하는 중: 100% (5/5), 완료.                                        |
+| 오브젝트 쓰는 중: 100% (6/6), 1.73 KiB | 1.73 MiB/s, 완료.                    |
+| Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)            |
+| To https://github.com/RowanB606/Cdsy_preboarding.git                     |
+|    cd8f4c7..e96f5ba  main -> main                                        |
+| branch 'main' set up to track 'origin/main'.                             |
+============================================================================
+```
 
- 3 files changed, 96 insertions(+), 1 deletion(-)
- create mode 100644 .DS_Store
- create mode 100644 week01/test.txt
+- 디렉토리 내용 확인
+```text
+pwd
+===[출력]====================================================================
+| /Users/rok-dam0029/Cdsy_preboarding                                      |
+============================================================================
 
-% git status
-현재 브랜치 main
-브랜치가 'origin/main'보다 1개 커밋만큼 앞에 있습니다.
-  (로컬에 있는 커밋을 제출하려면 "git push"를 사용하십시오)
-
-커밋할 사항 없음, 작업 폴더 깨끗함
-
-% git branch -M main
-% git push -u origin main
-오브젝트 나열하는 중: 9, 완료.
-오브젝트 개수 세는 중: 100% (9/9), 완료.
-Delta compression using up to 6 threads
-오브젝트 압축하는 중: 100% (5/5), 완료.
-오브젝트 쓰는 중: 100% (6/6), 1.73 KiB | 1.73 MiB/s, 완료.
-Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-To https://github.com/RowanB606/Cdsy_preboarding.git
-   cd8f4c7..e96f5ba  main -> main
-branch 'main' set up to track 'origin/main'.
-
-% pwd
-/Users/rok-dam0029/Cdsy_preboarding
-% ls -la
+ls -la
 # -l: long format 형식으로 표시
 # -a: 숨김 파일까지 모두(all) 표시
-total 16
-drwxr-xr-x   5 rok-dam0029  rok-dam0029   160  8  4 02:31 .
-drwxr-x---+ 21 rok-dam0029  rok-dam0029   672  8  4 02:35 ..
--rw-r--r--@  1 rok-dam0029  rok-dam0029  6148  8  4 02:25 .DS_Store
-drwxr-xr-x  13 rok-dam0029  rok-dam0029   416  8  4 02:43 .git
-drwxr-xr-x   4 rok-dam0029  rok-dam0029   128  8  4 02:26 week01
+===[출력]====================================================================
+| total 16                                                                 |
+| drwxr-xr-x   5 rok-dam0029  rok-dam0029   160  8  4 02:31 .              |
+| drwxr-x---+ 21 rok-dam0029  rok-dam0029   672  8  4 02:35 ..             |
+| -rw-r--r--@  1 rok-dam0029  rok-dam0029  6148  8  4 02:25 .DS_Store      |
+| drwxr-xr-x  13 rok-dam0029  rok-dam0029   416  8  4 02:43 .git           |
+| drwxr-xr-x   4 rok-dam0029  rok-dam0029   128  8  4 02:26 week01         |
+============================================================================
 ```
 
 ## 3. 권한 실습 및 증거 기록
 
 ### 3-1. 권한 변경 전
+- Auth 디렉토리 생성
 ```text
-% cd week01
-% pwd
-/Users/rok-dam0029/Cdsy_preboarding/week01
-% mkdir Auth
-
-% ls -la
-total 24
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..
-drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
-# 디렉토리Auth 소유자rwx 그룹r-x 기타사용자r-x 하드링크수2 소유자rok-dam0029 그룹rok-dam0029 64byte 8월 4일 03:27
--rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md
--rw-r--r--  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt
-# 파일test.txt 소유자rw- 그룹r-- 기타사용자r-- 하드링크수1 소유자rok-dam0029 그룹rok-dam0029 24byte 8월 4일 02:26
+cd week01
+pwd
+===[출력]====================================================================
+| /Users/rok-dam0029/Cdsy_preboarding/week01                               |
+============================================================================
+mkdir Auth
 ```
 
-### 3-2. 권한 변경(1)
+- 디렉토리 내용 확인
 ```text
-% chmod 777 Auth
-% chmod 000 test.txt
-% ls -la
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..
-drwxrwxrwx  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
-# 디렉토리Auth 소유자rwx 그룹rwx 기타사용자rwx 로 변경
--rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md
-----------  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt
-# 파일test.txt 소유자--- 그룹--- 기타사용자--- 로 변경
+ls -la
+===[출력]====================================================================
+| total 24
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..
+| drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
+|     # 디렉토리Auth 소유자rwx 그룹r-x 기타사용자r-x 하드링크수2 소유자rok-dam0029 그룹rok-dam0029 64byte 8월 4일 03:27
+| -rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md
+| -rw-r--r--  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt
+|     # 파일test.txt 소유자rw- 그룹r-- 기타사용자r-- 하드링크수1 소유자rok-dam0029 그룹rok-dam0029 24byte 8월 4일 02:26
+=============================================================================
 ```
 
-### 3-3. 권한 변경(2) - 원복
+### 3-2. 권한 변경 - 8진수 표기법(절대모드)
 ```text
-% chmod go-w Auth
-% chmod u+rw,go=r test.txt
-% ls -la
-total 24
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .
-drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..
-drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
--rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md
--rw-r--r--  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt
+chmod 777 Auth
+chmod 000 test.txt
+ls -la
+===[출력]====================================================================
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .               |
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..              |
+| drwxrwxrwx  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth            |
+|     # 디렉토리Auth 소유자rwx 그룹rwx 기타사용자rwx 로 변경                         |
+| -rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md       |
+| ----------  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt        |
+|     # 파일test.txt 소유자--- 그룹--- 기타사용자--- 로 변경                       |
+============================================================================
+```
+
+### 3-3. 권한 변경(2) - 기호 표기법(상대모드)
+```text
+chmod go-w Auth
+chmod u+rw,go=r test.txt
+ls -la
+===[출력]====================================================================
+| total 24                                                                 |
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 03:27 .               |
+| drwxr-xr-x  5 rok-dam0029  rok-dam0029   160  8  4 02:31 ..              |
+| drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth            |
+|     # 디렉토리Auth 소유자rwx 그룹r-x 기타사용자r-x 로 변경                         |
+| -rw-r--r--  1 rok-dam0029  rok-dam0029  4663  8  4 02:45 README.md       |
+| -rw-r--r--  1 rok-dam0029  rok-dam0029    24  8  4 02:26 test.txt        |
+|     # 파일test.txt 소유자rw- 그룹r-- 기타사용자r-- 로 변경                       |
+============================================================================
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ(r=읽기, w=쓰기, x=실행, -=권한없음)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 |    7 : rwx    |    u : 소유자        |    + : 권한추가         |
@@ -254,15 +290,18 @@ drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
 ## 4. Docker 설치 및 기본 점검
 ### 4-1. Docker 버전 확인
 ```text
-% docker --version
-Docker version 29.4.0, build 9d7ad9f
+docker --version
+===[출력]======================================
+| Docker version 29.4.0, build 9d7ad9f       |
+==============================================
 ```
 
 ### 4-2. Docker Daemon 동작 여부 확인
 ```text
 # Docker Desktop 대신 OrbStack 실행
 
-% docker info
+docker info
+===[출력]====================================================================
 Client:
  Version:    29.4.0
  Context:    orbstack
@@ -392,6 +431,7 @@ Server:
  Firewall Backend: iptables
 
 WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+===[출력]====================================================================
 ```
 
 ## 5. Docker 기본 운영 명령 수행

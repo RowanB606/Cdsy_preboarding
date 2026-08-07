@@ -59,16 +59,19 @@ cat README.md
 - 디렉토뢰/파일 목록 확인
 ```text
 pwc
-===[출력]===========================================
-| /Users/rok-dam0029/Cdsy_preboarding/week01       |
-===[출력]===========================================
+===[출력]=======================================
+| /Users/rok-dam0029/Cdsy_preboarding/week01  |
+===============================================
+
 ls
 ===[출력]========
 | README.md    |
 ================
+```
 
 - README.md 파일을 README_copy.md 이름으로 복사
-cp README.md README_copy.md                      # 파일 복사
+```text
+cp README.md README_copy.md
 ls
 ===[출력]====================================
 | README.md	README_copy.md                 |
@@ -77,25 +80,27 @@ ls
 
 - README_copy.md 파일 이동
 ```text
-mv README_copy.md ../                            # 파일 이동(복사본을 상위폴더로 이동)
+mv README_copy.md ../                            # 복사본을 상위폴더로 이동
 ls
 ===[출력]========
 | README.md    |
 ================
+
 cd ..
 pwd
 ===[출력]===================================
 | /Users/rok-dam0029/Cdsy_preboarding     |
 ===========================================
+
 ls
 ===[출력]===================================
-| README_copy.md	week01                  |
+| README_copy.md	week01                |
 ===========================================
 ```
 
 - 파일 이름 변경
 ```text
-mv README_copy.md "README(2).md"                 # 파일 이름변경(괄호를 특수문자로 인식하여 "" 사용)
+mv README_copy.md "README(2).md"                 # 괄호를 특수문자로 인식하여 "" 사용
 ls
 ===[출력]===================================
 | README(2).md	week01                    |
@@ -104,7 +109,7 @@ ls
 
 - 파일 삭제
 ```text
-rm "README(2).md"                                # 파일 삭제
+rm "README(2).md"
 ls
 ===[출력]========
 | week01       |
@@ -112,23 +117,35 @@ ls
 ```
 
 ### 2-4. GitHub 업로드(동기화)
+- Git 초기화
 ```text
-% git init
-/Users/rok-dam0029/Cdsy_preboarding/.git/ 안의 기존 깃 저장소를 다시 초기화했습니다
+git init
+===[출력]===========================================================================
+| /Users/rok-dam0029/Cdsy_preboarding/.git/ 안의 기존 깃 저장소를 다시 초기화했습니다       |
+===================================================================================
+```
 
-% git remote add origin https://github.com/RowanB606/Cdsy_preboarding.git
-% git add .
+- Git 레포지토리 목록에 신규 주소 등록 & Commit 대상 등록
+```zsh
+git remote add origin https://github.com/RowanB606/Cdsy_preboarding.git
+git add .
 
-% git status
-현재 브랜치 main
-브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+# Git의 현재 상황 확인
+===[출력]=======================================================
+| git status                                                  |
+| 현재 브랜치 main                                               |
+| 브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.                  |
+|                                                             |
+| 커밋할 변경 사항:                                               |
+|   (use "git restore --staged <file>..." to unstage)         |
+| 	새 파일:       .DS_Store                                    |
+| 	수정함:        week01/README.md                             |
+| 	새 파일:       week01/test.txt                              |
+===============================================================
+```
 
-커밋할 변경 사항:
-  (use "git restore --staged <file>..." to unstage)
-	새 파일:       .DS_Store
-	수정함:        week01/README.md
-	새 파일:       week01/test.txt
-
+- 
+```text
 % git commit -m "Commit #01 - New"
 [main e96f5ba] Commit #01 - New
  Committer: 백록담 <rok-dam0029@c4r1s6.codyssey.kr>

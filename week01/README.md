@@ -24,14 +24,16 @@ Docker를 설치하고, 커스텀 웹 서버 이미지를 만들어 포트 매�
 ## 2. 터미널 조작 로그
 
 ### 2-1. 현재 위치 및 디렉토리 생성/이동
+- 현재 위치 확인
 ```text
-# 현재 위치 확인
 pwd
 ===[출력]==================
 | /Users/rok-dam0029     |
 ==========================
+```
 
-# 디렉토리 생성/이동
+- 디렉토리 생성/이동
+```text
 mkdir -p Cdsy_preboarding/week01
 cd Cdsy_preboarding/week01
 pwd
@@ -41,41 +43,72 @@ pwd
 ```
 
 ### 2-2. 빈 파일 생성/수정/내용확인
+- 빈 파일 생성
+- 파일 내용 수정
+- 파일 내용 확인
 ```text
 touch README.md
-% echo "# Week 01: 개발 워크스테이션 구축 - Docker 기초 및 웹서버 컨테이너화" > README.md
-% cat README.md
+echo "# Week 01: 개발 워크스테이션 구축 - Docker 기초 및 웹서버 컨테이너화" > README.md
+cat README.md
 ===[출력]=====================================================
-| # Week 01: 개발 워크스테이션 구축 - Docker 기초 및 웹서버 컨테이너화  |
+| # Week 01: 개발 워크스테이션 구축 - Docker 기초 및 웹서버 컨테이너화   |
 =============================================================
 ```
 
 ### 2-3. 파일 복사/이동/이름변경/삭제
+- 디렉토뢰/파일 목록 확인
 ```text
-% pwc
-/Users/rok-dam0029/Cdsy_preboarding/week01
-% ls
-README.md
-% cp README.md README_copy.md                      # 파일 복사
-% ls
-README.md	README_copy.md
+pwc
+===[출력]===========================================
+| /Users/rok-dam0029/Cdsy_preboarding/week01       |
+===[출력]===========================================
+ls
+===[출력]========
+| README.md    |
+================
 
-% mv README_copy.md ../                            # 파일 이동(복사본을 상위폴더로 이동)
-% ls
-README.md
-% cd ..
-% pwd
-/Users/rok-dam0029/Cdsy_preboarding
-% ls
-README_copy.md	week01
+- README.md 파일을 README_copy.md 이름으로 복사
+cp README.md README_copy.md                      # 파일 복사
+ls
+===[출력]====================================
+| README.md	README_copy.md                 |
+============================================
+```
 
-% mv README_copy.md "README(2).md"                 # 파일 이름변경(괄호를 특수문자로 인식하여 "" 사용)
-% ls
-README(2).md	week01
+- README_copy.md 파일 이동
+```text
+mv README_copy.md ../                            # 파일 이동(복사본을 상위폴더로 이동)
+ls
+===[출력]========
+| README.md    |
+================
+cd ..
+pwd
+===[출력]===================================
+| /Users/rok-dam0029/Cdsy_preboarding     |
+===========================================
+ls
+===[출력]===================================
+| README_copy.md	week01                  |
+===========================================
+```
 
-% rm "README(2).md"                                # 파일 삭제
-% ls
-week01
+- 파일 이름 변경
+```text
+mv README_copy.md "README(2).md"                 # 파일 이름변경(괄호를 특수문자로 인식하여 "" 사용)
+ls
+===[출력]===================================
+| README(2).md	week01                    |
+===========================================
+```
+
+- 파일 삭제
+```text
+rm "README(2).md"                                # 파일 삭제
+ls
+===[출력]========
+| week01       |
+================
 ```
 
 ### 2-4. GitHub 업로드(동기화)

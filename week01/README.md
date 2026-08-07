@@ -8,7 +8,7 @@ Docker를 설치하고, 커스텀 웹 서버 이미지를 만들어 포트 매�
 
 ### 1-2. 실행 환경
 - OS: macOS Sequoia v15.7.4
-- Docker Version: [나중에 기록]
+- Docker Version: 29.4.0
 - Git Version: [나중에 기록]
 
 ### 1-3. 수행 항목 체크리스트
@@ -25,13 +25,17 @@ Docker를 설치하고, 커스텀 웹 서버 이미지를 만들어 포트 매�
 
 ### 2-1. 현재 위치 및 디렉토리 생성/이동
 ```text
-% pwd
-/Users/rok-dam0029
+pwd
+***[출력]******************
+* /Users/rok-dam0029     *
+**************************
 
-% mkdir -p Cdsy_preboarding/week01
-% cd Cdsy_preboarding/week01
-% pwd
-/Users/rok-dam0029/Cdsy_preboarding/week01
+mkdir -p Cdsy_preboarding/week01
+cd Cdsy_preboarding/week01
+pwd
+***[출력]***************************************
+* /Users/rok-dam0029/Cdsy_preboarding/week01  *
+***********************************************
 ```
 
 ### 2-2. 빈 파일 생성/수정/내용확인
@@ -194,12 +198,153 @@ drwxr-xr-x  2 rok-dam0029  rok-dam0029    64  8  4 03:27 Auth
 ```
 
 ## 4. Docker 설치 및 기본 점검
+### 4-1. Docker 버전 확인
+```text
 % docker --version
 Docker version 29.4.0, build 9d7ad9f
+```
 
+### 4-2. Docker Daemon 동작 여부 확인
+```text
+# Docker Desktop 대신 OrbStack 실행
 
+% docker info
+Client:
+ Version:    29.4.0
+ Context:    orbstack
+ Debug Mode: false
+ Plugins:
+  agent: Docker AI Agent Runner (Docker Inc.)
+    Version:  v1.115.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-agent
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.27.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-ai
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.33.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.1.2
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-compose
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.47
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-debug
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.4.3
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-desktop
+  dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+    Version:  v0.0.7
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-dhi
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-extension
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-init
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.43.3
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-mcp
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.6.9
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-offload
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.2.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-pass
+  sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+    Version:  v0.13.0
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-sandbox
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.23.1
+    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-scout
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 29.4.0
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+ runc version: c241c0bb5e60a8e8c1b2e53d4eca8d0068d8d57e
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.19.13-orbstack-gbd1dc07b8cf4
+ Operating System: OrbStack
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 6
+ Total Memory: 15.67GiB
+ Name: orbstack
+ ID: d2503a70-f1e4-40ce-a258-a19db07ed5a9
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Product License: Community Engine
+ Default Address Pools:
+   Base: 192.168.97.0/24, Size: 24
+   Base: 192.168.107.0/24, Size: 24
+   Base: 192.168.117.0/24, Size: 24
+   Base: 192.168.147.0/24, Size: 24
+   Base: 192.168.148.0/24, Size: 24
+   Base: 192.168.155.0/24, Size: 24
+   Base: 192.168.156.0/24, Size: 24
+   Base: 192.168.158.0/24, Size: 24
+   Base: 192.168.163.0/24, Size: 24
+   Base: 192.168.164.0/24, Size: 24
+   Base: 192.168.165.0/24, Size: 24
+   Base: 192.168.166.0/24, Size: 24
+   Base: 192.168.167.0/24, Size: 24
+   Base: 192.168.171.0/24, Size: 24
+   Base: 192.168.172.0/24, Size: 24
+   Base: 192.168.181.0/24, Size: 24
+   Base: 192.168.183.0/24, Size: 24
+   Base: 192.168.186.0/24, Size: 24
+   Base: 192.168.207.0/24, Size: 24
+   Base: 192.168.214.0/24, Size: 24
+   Base: 192.168.215.0/24, Size: 24
+   Base: 192.168.216.0/24, Size: 24
+   Base: 192.168.223.0/24, Size: 24
+   Base: 192.168.227.0/24, Size: 24
+   Base: 192.168.228.0/24, Size: 24
+   Base: 192.168.229.0/24, Size: 24
+   Base: 192.168.237.0/24, Size: 24
+   Base: 192.168.239.0/24, Size: 24
+   Base: 192.168.242.0/24, Size: 24
+   Base: 192.168.247.0/24, Size: 24
+   Base: fd07:b51a:cc66:d000::/56, Size: 64
+ Firewall Backend: iptables
+
+WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+```
 
 ## 5. Docker 기본 운영 명령 수행
+### 5-1. 이미지
+
+
+
 
 
 ## 6. 컨테이너 실행 실습

@@ -297,6 +297,10 @@ docker --version
 
 docker info
 ===[출력]====================================================================
+```
+[출력 화면](week01/4-2. [출력].txt)
+
+
 Client:
  Version:    29.4.0
  Context:    orbstack

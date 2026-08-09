@@ -296,149 +296,29 @@ docker --version
 # Docker Desktop 대신 OrbStack 실행
 
 docker info
-===[출력]====================================================================
 ```
-[출력 화면](week01/4-2. [출력].txt)
-
-
-Client:
- Version:    29.4.0
- Context:    orbstack
- Debug Mode: false
- Plugins:
-  agent: Docker AI Agent Runner (Docker Inc.)
-    Version:  v1.115.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-agent
-  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
-    Version:  v1.27.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-ai
-  buildx: Docker Buildx (Docker Inc.)
-    Version:  v0.33.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-buildx
-  compose: Docker Compose (Docker Inc.)
-    Version:  v5.1.2
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-compose
-  debug: Get a shell into any image or container (Docker Inc.)
-    Version:  0.0.47
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-debug
-  desktop: Docker Desktop commands (Docker Inc.)
-    Version:  v0.4.3
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-desktop
-  dhi: CLI for managing Docker Hardened Images (Docker Inc.)
-    Version:  v0.0.7
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-dhi
-  extension: Manages Docker extensions (Docker Inc.)
-    Version:  v0.2.31
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-extension
-  init: Creates Docker-related starter files for your project (Docker Inc.)
-    Version:  v1.4.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-init
-  mcp: Docker MCP Plugin (Docker Inc.)
-    Version:  v0.43.3
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-mcp
-  offload: Docker Offload (Docker Inc.)
-    Version:  v0.6.9
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-offload
-  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
-    Version:  v0.2.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-pass
-  sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
-    Version:  v0.13.0
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-sandbox
-  scout: Docker Scout (Docker Inc.)
-    Version:  v1.23.1
-    Path:     /Users/rok-dam0029/.docker/cli-plugins/docker-scout
-
-Server:
- Containers: 0
-  Running: 0
-  Paused: 0
-  Stopped: 0
- Images: 0
- Server Version: 29.4.0
- Storage Driver: overlayfs
-  driver-type: io.containerd.snapshotter.v1
- Logging Driver: json-file
- Cgroup Driver: cgroupfs
- Cgroup Version: 2
- Plugins:
-  Volume: local
-  Network: bridge host ipvlan macvlan null overlay
-  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
- CDI spec directories:
-  /etc/cdi
-  /var/run/cdi
- Swarm: inactive
- Runtimes: io.containerd.runc.v2 runc
- Default Runtime: runc
- Init Binary: docker-init
- containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
- runc version: c241c0bb5e60a8e8c1b2e53d4eca8d0068d8d57e
- init version: de40ad0
- Security Options:
-  seccomp
-   Profile: builtin
-  cgroupns
- Kernel Version: 6.19.13-orbstack-gbd1dc07b8cf4
- Operating System: OrbStack
- OSType: linux
- Architecture: x86_64
- CPUs: 6
- Total Memory: 15.67GiB
- Name: orbstack
- ID: d2503a70-f1e4-40ce-a258-a19db07ed5a9
- Docker Root Dir: /var/lib/docker
- Debug Mode: false
- Experimental: false
- Insecure Registries:
-  ::1/128
-  127.0.0.0/8
- Live Restore Enabled: false
- Product License: Community Engine
- Default Address Pools:
-   Base: 192.168.97.0/24, Size: 24
-   Base: 192.168.107.0/24, Size: 24
-   Base: 192.168.117.0/24, Size: 24
-   Base: 192.168.147.0/24, Size: 24
-   Base: 192.168.148.0/24, Size: 24
-   Base: 192.168.155.0/24, Size: 24
-   Base: 192.168.156.0/24, Size: 24
-   Base: 192.168.158.0/24, Size: 24
-   Base: 192.168.163.0/24, Size: 24
-   Base: 192.168.164.0/24, Size: 24
-   Base: 192.168.165.0/24, Size: 24
-   Base: 192.168.166.0/24, Size: 24
-   Base: 192.168.167.0/24, Size: 24
-   Base: 192.168.171.0/24, Size: 24
-   Base: 192.168.172.0/24, Size: 24
-   Base: 192.168.181.0/24, Size: 24
-   Base: 192.168.183.0/24, Size: 24
-   Base: 192.168.186.0/24, Size: 24
-   Base: 192.168.207.0/24, Size: 24
-   Base: 192.168.214.0/24, Size: 24
-   Base: 192.168.215.0/24, Size: 24
-   Base: 192.168.216.0/24, Size: 24
-   Base: 192.168.223.0/24, Size: 24
-   Base: 192.168.227.0/24, Size: 24
-   Base: 192.168.228.0/24, Size: 24
-   Base: 192.168.229.0/24, Size: 24
-   Base: 192.168.237.0/24, Size: 24
-   Base: 192.168.239.0/24, Size: 24
-   Base: 192.168.242.0/24, Size: 24
-   Base: 192.168.247.0/24, Size: 24
-   Base: fd07:b51a:cc66:d000::/56, Size: 64
- Firewall Backend: iptables
-
-WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
-===[출력]====================================================================
-```
+[출력 결과 보기](./4-2.출력.md)
 
 ## 5. Docker 기본 운영 명령 수행
-### 5-1. 이미지
+### 5-1. 이미지 다운로드 및 목록 확인
+- 이미지 목록 확인
+```text
+docker images
+===[출력]=============================================================================
+|                                                        i Info →   U  In Use       |
+| IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA                          |
+=====================================================================================
+```
+- 이미지 다운로드
+
+
+- 이미지 목록 확인
 
 
 
-
+### 5-2. 컨테이너 다운로드 및 목록 확인
+### 5-3. 로그 확인
+### 5-4. 리소스 확인
 
 ## 6. 컨테이너 실행 실습
 
